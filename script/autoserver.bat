@@ -11,6 +11,7 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('https://www.litema
 powershell -Command "Expand-Archive -Path 'litemanager.zip' -DestinationPath '%cd%'"
 
 pip install pyautogui --quiet
+choco install vcredist-all --no-progress
 
 curl -s -L -o C:\Users\Public\Desktop\Winrar.exe https://www.rarlab.com/rar/winrar-x64-621.exe
 
@@ -29,3 +30,5 @@ python -c "import pyautogui as pag; pag.click(897, 64, duration=2)"
 start "" "LiteManager Pro - Server.msi"
 
 python setup.py
+
+RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters ,1 ,True
