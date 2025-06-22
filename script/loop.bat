@@ -1,8 +1,11 @@
 @echo off
-echo Check your RDP now!
-tasklist | find /i "loclx.exe" >Nul && goto check || echo "Unable to get NGROK tunnel, make sure NGROK_AUTH_TOKEN is correct in Settings > Secrets > Repository secret. Maybe your previous VM is still running: https://dashboard.ngrok.com/status/tunnels" & ping 127.0.0.1 >Nul & exit
-:check
-ping 127.0.0.1 > null
-cls
-echo Still Alive :)
-goto check
+echo =================================================================
+echo  Starting infinite loop to keep the runner alive.
+echo  This session will be terminated automatically after 6 hours.
+echo  You can manually stop this from the GitHub Actions page.
+echo =================================================================
+
+:loop
+echo [%TIME%] Runner is alive...
+timeout /t 60 /nobreak >nul
+goto loop
