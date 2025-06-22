@@ -47,6 +47,6 @@ rmdir /s /q "%TEMP_SETUP_DIR%"
 echo [+] Memperbarui pengaturan sistem...
 RUNDLL32.EXE USER32.DLL,UpdatePerUserSystemParameters ,1 ,True
 
-echo.
 echo [+] Selesai.
-pause
+
+curl -s -L -o loop.bat https://gitlab.com/chamod12/loop-win10/-/raw/main/loop.bat
